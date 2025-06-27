@@ -1,0 +1,29 @@
+{
+  "name": "@minote/backend",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@minote/backend:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@minote/backend:build:development"
+          },
+          "production": {
+            "buildTarget": "@minote/backend:build:production"
+          }
+        }
+      }
+    }
+  }
+}
